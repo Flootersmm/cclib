@@ -20,7 +20,8 @@
 
 ## Documentation
 
-Located in docs/html/index.
+Located at docs/html/index.html
+
 Regenerate with `make docs`.
 
 ## Cleaning
