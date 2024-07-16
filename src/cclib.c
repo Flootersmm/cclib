@@ -11,62 +11,62 @@
 ///
 /// Iterate through all values in an array of ints and add them together.
 /// Checks for `NULL` array, size <= 0, and overflows, then sets errno
-/// appropriately. Returns `INT_MIN` if errno gets set.
+/// appropriately. Returns `INT_MIN` if `errno` gets set.
 ///
-/// @param arr The array of ints to sum.
-/// @param size The size of the array.
+/// @param _arr The array of ints to sum.
+/// @param _size The size of the array.
 /// @return The sum of all ints in the array. `INT_MIN` if error.
-int get_sum(const int *arr, const size_t size) {
-  Sum sum;
-  sum = (Sum){.result = 0, .error = 0};
+__THROW __attribute_warn_unused_result__ int get_sum(const int *_arr,
+                                                     const size_t _size) {
+  Sum _sum = {0, 0};
   errno = 0;
 
-  if (arr == NULL) {
+  if (_arr == NULL) {
     errno = EINVAL;
     perror("    get_sum() failed");
     return INT_MIN;
   }
 
-  if (size <= 0) {
+  if (_size <= 0) {
     errno = EINVAL;
     perror("    get_sum() failed");
     return INT_MIN;
   }
 
-  for (size_t i = 0; i < size; i++) {
-    if (arr[i] > 0 && sum.result > INT_MAX - arr[i]) {
+  for (size_t _i = 0; _i < _size; _i++) {
+    if (_arr[_i] > 0 && _sum.result > INT_MAX - _arr[_i]) {
       errno = ERANGE;
       perror("    get_sum() failed");
       return INT_MIN;
     }
-    if (arr[i] < 0 && sum.result < INT_MIN - arr[i]) {
+    if (_arr[_i] < 0 && _sum.result < INT_MIN - _arr[_i]) {
       errno = ERANGE;
       perror("    get_sum() failed");
       return INT_MIN;
     }
 
-    sum.result += arr[i];
+    _sum.result += _arr[_i];
   }
 
-  return sum.result;
+  return _sum.result;
 }
 
 /// Print string with linebreak
 ///
-/// Prints a string with \n afterwards to create a new line and flush the
+/// Prints a string with `\n` afterwards to create a new line and flush the
 /// buffer.
 ///
-/// @param str A string.
-/// @return Result, 0 for success, -1 for failure.
-int println(const char *str) {
+/// @param _str A string.
+/// @return 0 for success, -1 for failure.
+__THROW __attribute_warn_unused_result__ int println(const char *_str) {
   errno = 0;
-  if (str == NULL) {
+  if (_str == NULL) {
     errno = EINVAL;
     perror("    println() failed");
     return -1;
   }
 
-  printf("%s\n", str);
+  printf("%s\n", _str);
   return 0;
 }
 
@@ -75,67 +75,67 @@ int println(const char *str) {
 /// Utilises str_cpy to append two strings together, with a single character
 /// delimiter between.
 ///
-/// @param str1 The string before the delimiter.
-/// @param str2 The string after the delimiter.
-/// @param delimiter The single-character delimiter.
+/// @param _str1 The string before the delimiter.
+/// @param _str2 The string after the delimiter.
+/// @param _delimiter The single-character delimiter.
 ///
 /// @return A `String`, containing `char * .string` and `int .error`.
-String str_join(const char *str1, const char *str2, const char delimiter) {
-  String new_str;
-  new_str.error = 0;
-  new_str.string = NULL;
+__THROW __attribute_warn_unused_result__ String
+str_join(const char *_str1, const char *_str2, const char _delimiter) {
+  String _new_str = {NULL, 0};
 
   errno = 0;
-  if (str1 == NULL || str2 == NULL) {
+  if (_str1 == NULL || _str2 == NULL) {
     errno = EINVAL;
     perror("    str_join() failed");
-    new_str.error = -1;
-    return new_str;
+    _new_str.error = -1;
+    return _new_str;
   }
 
-  int len1 = strlen(str1);
-  int len2 = strlen(str2);
-  int new_size = len1 + len2 + 2;
+  int _len1 = strlen(_str1);
+  int _len2 = strlen(_str2);
+  int _new_size = _len1 + _len2 + 2;
 
-  new_str.string = malloc(new_size);
-  if (new_str.string == NULL) {
+  _new_str.string = malloc(_new_size);
+  if (_new_str.string == NULL) {
     perror("    malloc() failed");
-    new_str.error = -1;
-    return new_str;
+    _new_str.error = -1;
+    return _new_str;
   }
 
-  strcpy(new_str.string, str1);
-  new_str.string[len1] = delimiter;
-  strcpy(new_str.string + len1 + 1, str2);
+  strcpy(_new_str.string, _str1);
+  _new_str.string[_len1] = _delimiter;
+  strcpy(_new_str.string + _len1 + 1, _str2);
 
-  return new_str;
+  return _new_str;
 }
 
 /// Free all ptrs
 ///
 /// Takes a variadic argument of ptrs and frees all of them.
 ///
-/// @param num Number of variadic arguments.
+/// @param _num Number of variadic arguments.
 /// @param ... Pointers to be freed.
 ///
 /// @return 0 for success, -1 for failure.
-int free_all(const size_t num, ...) {
-  va_list args;
-  va_start(args, num);
-  int error_occurred = 0;
+__THROW
+int free_all(const size_t _num, ...) {
+  va_list _args;
+  va_start(_args, _num);
+  int _error_occurred = 0;
 
-  for (size_t i = 0; i < num; i++) {
-    void **ptr = va_arg(args, void **);
-    if (ptr != NULL && *ptr != NULL) {
-      free(*ptr);
-      *ptr = NULL;
+  for (size_t _i = 0; _i < _num; _i++) {
+    void **_ptr = va_arg(_args, void **);
+    if (_ptr != NULL && *_ptr != NULL) {
+      free(*_ptr);
+      *_ptr = NULL;
     } else {
-      error_occurred = 1;
+      _error_occurred = 1;
       errno = EINVAL;
       perror("    free_all() failed");
     }
   }
 
-  va_end(args);
-  return error_occurred ? -1 : 0;
+  va_end(_args);
+  return _error_occurred ? -1 : 0;
 }

@@ -153,60 +153,60 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">    5</span>  <span class="keywordtype">int</span> sum;</div>
 <div class="line"><span class="lineno">    6</span> </div>
 <div class="line"><span class="lineno">    7</span>  <span class="keywordtype">int</span> arr1[4] = {1, 2, 3, 4};</div>
-<div class="line"><span class="lineno">    8</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr1, 4);</div>
+<div class="line"><span class="lineno">    8</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr1, 4);</div>
 <div class="line"><span class="lineno">    9</span>  assert(sum == 10);</div>
 <div class="line"><span class="lineno">   10</span> </div>
 <div class="line"><span class="lineno">   11</span>  <span class="keywordtype">int</span> arr2[1] = {5};</div>
-<div class="line"><span class="lineno">   12</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr2, 1);</div>
+<div class="line"><span class="lineno">   12</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr2, 1);</div>
 <div class="line"><span class="lineno">   13</span>  assert(sum == 5);</div>
 <div class="line"><span class="lineno">   14</span> </div>
 <div class="line"><span class="lineno">   15</span>  <span class="keywordtype">int</span> arr3[4] = {-1, -2, -3, -4};</div>
-<div class="line"><span class="lineno">   16</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr3, 4);</div>
+<div class="line"><span class="lineno">   16</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr3, 4);</div>
 <div class="line"><span class="lineno">   17</span>  assert(sum == -10);</div>
 <div class="line"><span class="lineno">   18</span> </div>
 <div class="line"><span class="lineno">   19</span>  <span class="keywordtype">int</span> arr4[4] = {1, -1, 2, -2};</div>
-<div class="line"><span class="lineno">   20</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr4, 4);</div>
+<div class="line"><span class="lineno">   20</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr4, 4);</div>
 <div class="line"><span class="lineno">   21</span>  assert(sum == 0);</div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span>  <span class="keywordtype">int</span> arr5[4] = {0, 0, 0, 0};</div>
-<div class="line"><span class="lineno">   24</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr5, 4);</div>
+<div class="line"><span class="lineno">   24</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr5, 4);</div>
 <div class="line"><span class="lineno">   25</span>  assert(sum == 0);</div>
 <div class="line"><span class="lineno">   26</span> </div>
 <div class="line"><span class="lineno">   27</span>  <span class="keywordtype">int</span> arr7[2] = {INT_MAX, 1};</div>
 <div class="line"><span class="lineno">   28</span>  errno = 0;</div>
-<div class="line"><span class="lineno">   29</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr7, 2);</div>
+<div class="line"><span class="lineno">   29</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr7, 2);</div>
 <div class="line"><span class="lineno">   30</span>  assert(errno == ERANGE);</div>
 <div class="line"><span class="lineno">   31</span> </div>
 <div class="line"><span class="lineno">   32</span>  <span class="keywordtype">int</span> arr8[2] = {INT_MIN, -1};</div>
 <div class="line"><span class="lineno">   33</span>  errno = 0;</div>
-<div class="line"><span class="lineno">   34</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr8, 2);</div>
+<div class="line"><span class="lineno">   34</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr8, 2);</div>
 <div class="line"><span class="lineno">   35</span>  assert(errno == ERANGE);</div>
 <div class="line"><span class="lineno">   36</span> </div>
 <div class="line"><span class="lineno">   37</span>  <span class="keywordtype">int</span> arr9[2] = {INT_MAX, INT_MAX};</div>
 <div class="line"><span class="lineno">   38</span>  errno = 0;</div>
-<div class="line"><span class="lineno">   39</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr9, 2);</div>
+<div class="line"><span class="lineno">   39</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr9, 2);</div>
 <div class="line"><span class="lineno">   40</span>  assert(errno == ERANGE);</div>
 <div class="line"><span class="lineno">   41</span> </div>
 <div class="line"><span class="lineno">   42</span>  <span class="keywordtype">int</span> arr10[2] = {INT_MIN, INT_MIN};</div>
 <div class="line"><span class="lineno">   43</span>  errno = 0;</div>
-<div class="line"><span class="lineno">   44</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr10, 2);</div>
+<div class="line"><span class="lineno">   44</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr10, 2);</div>
 <div class="line"><span class="lineno">   45</span>  assert(errno == ERANGE);</div>
 <div class="line"><span class="lineno">   46</span> </div>
 <div class="line"><span class="lineno">   47</span>  <span class="keywordtype">int</span> arr11[4] = {INT_MAX, -1, INT_MAX, -1};</div>
-<div class="line"><span class="lineno">   48</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr11, 4);</div>
+<div class="line"><span class="lineno">   48</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr11, 4);</div>
 <div class="line"><span class="lineno">   49</span>  assert(errno == ERANGE);</div>
 <div class="line"><span class="lineno">   50</span> </div>
 <div class="line"><span class="lineno">   51</span>  <span class="keywordtype">int</span> arr12[10] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};</div>
-<div class="line"><span class="lineno">   52</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr12, 10);</div>
+<div class="line"><span class="lineno">   52</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr12, 10);</div>
 <div class="line"><span class="lineno">   53</span>  assert(sum == 10);</div>
 <div class="line"><span class="lineno">   54</span> </div>
 <div class="line"><span class="lineno">   55</span>  <span class="keywordtype">int</span> arr13[10] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};</div>
-<div class="line"><span class="lineno">   56</span>  sum = <a class="code hl_function" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a>(arr13, 10);</div>
+<div class="line"><span class="lineno">   56</span>  sum = <a class="code hl_function" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a>(arr13, 10);</div>
 <div class="line"><span class="lineno">   57</span>  assert(sum == -10);</div>
 <div class="line"><span class="lineno">   58</span> </div>
 <div class="line"><span class="lineno">   59</span>  printf(<span class="stringliteral">&quot;test_get_sum(): All tests passed.\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   60</span>}</div>
-<div class="ttc" id="acclib_8c_html_a52c0a58aa0c854cb054d0d146061a280"><div class="ttname"><a href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280">get_sum</a></div><div class="ttdeci">int get_sum(int *arr, int size)</div><div class="ttdoc">Add all member ints of an array.</div><div class="ttdef"><b>Definition</b> <a href="cclib_8c_source.html#l00019">cclib.c:19</a></div></div>
+<div class="ttc" id="acclib_8c_html_a6096812e8e31026e1dfb49ad48dfa9c4"><div class="ttname"><a href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4">get_sum</a></div><div class="ttdeci">__THROW __attribute_warn_unused_result__ int get_sum(const int *_arr, const size_t _size)</div><div class="ttdoc">Add all member ints of an array.</div><div class="ttdef"><b>Definition</b> <a href="cclib_8c_source.html#l00019">cclib.c:19</a></div></div>
 </div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -215,7 +215,7 @@ Functions</h2></td></tr>
 <div class="center"><img src="test__get__sum_8c_a40b3232d5afd80dc15c1803da134c154_cgraph.png" border="0" usemap="#atest__get__sum_8c_a40b3232d5afd80dc15c1803da134c154_cgraph" alt=""/></div>
 <map name="atest__get__sum_8c_a40b3232d5afd80dc15c1803da134c154_cgraph" id="atest__get__sum_8c_a40b3232d5afd80dc15c1803da134c154_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,106,32"/>
-<area shape="rect" href="cclib_8c.html#a52c0a58aa0c854cb054d0d146061a280" title="Add all member ints of an array." alt="" coords="154,5,225,32"/>
+<area shape="rect" href="cclib_8c.html#a6096812e8e31026e1dfb49ad48dfa9c4" title="Add all member ints of an array." alt="" coords="154,5,225,32"/>
 <area shape="poly" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
 </map>
 </div>
@@ -240,7 +240,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="test__get__sum_8c.html">test_get_sum.c</a></li>
-    <li class="footer">Generated on Tue Jul 16 2024 11:25:19 for CCLIB by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jul 16 2024 20:16:51 for CCLIB by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

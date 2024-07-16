@@ -166,12 +166,12 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   14</span>      <span class="stringliteral">&quot;This is a very long string to test the println function to ensure it &quot;</span></div>
 <div class="line"><span class="lineno">   15</span>      <span class="stringliteral">&quot;can handle long inputs correctly.&quot;</span>};</div>
 <div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(test_strings) / <span class="keyword">sizeof</span>(test_strings[0]); ++i) {</div>
+<div class="line"><span class="lineno">   17</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <span class="keyword">sizeof</span>(test_strings) / <span class="keyword">sizeof</span>(test_strings[0]); ++i) {</div>
 <div class="line"><span class="lineno">   18</span>    FILE *saved_stdout = stdout;</div>
 <div class="line"><span class="lineno">   19</span>    stdout = freopen(<span class="stringliteral">&quot;tmp_output&quot;</span>, <span class="stringliteral">&quot;w+&quot;</span>, stdout);</div>
 <div class="line"><span class="lineno">   20</span>    assert(stdout != NULL);</div>
 <div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordtype">int</span> result = <a class="code hl_function" href="cclib_8c.html#a1925cdb42031999f3e4272c01cbdff3c">println</a>(test_strings[i]);</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordtype">int</span> result = <a class="code hl_function" href="cclib_8c.html#a8845747c4a0fc28e02cf986ed21ce46e">println</a>(test_strings[i]);</div>
 <div class="line"><span class="lineno">   23</span>    assert(result == 0);</div>
 <div class="line"><span class="lineno">   24</span> </div>
 <div class="line"><span class="lineno">   25</span>    fflush(stdout);</div>
@@ -196,7 +196,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>  printf(<span class="stringliteral">&quot;test_println(): All tests passed.\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   46</span>}</div>
-<div class="ttc" id="acclib_8c_html_a1925cdb42031999f3e4272c01cbdff3c"><div class="ttname"><a href="cclib_8c.html#a1925cdb42031999f3e4272c01cbdff3c">println</a></div><div class="ttdeci">int println(char *str)</div><div class="ttdoc">Print string with linebreak.</div><div class="ttdef"><b>Definition</b> <a href="cclib_8c_source.html#l00061">cclib.c:61</a></div></div>
+<div class="ttc" id="acclib_8c_html_a8845747c4a0fc28e02cf986ed21ce46e"><div class="ttname"><a href="cclib_8c.html#a8845747c4a0fc28e02cf986ed21ce46e">println</a></div><div class="ttdeci">__THROW __attribute_warn_unused_result__ int println(const char *_str)</div><div class="ttdoc">Print string with linebreak.</div><div class="ttdef"><b>Definition</b> <a href="cclib_8c_source.html#l00061">cclib.c:61</a></div></div>
 </div><!-- fragment --><div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -205,7 +205,7 @@ Functions</h2></td></tr>
 <div class="center"><img src="test__println_8c_acc37dfdb8c62eada86fecf37c8b5418c_cgraph.png" border="0" usemap="#atest__println_8c_acc37dfdb8c62eada86fecf37c8b5418c_cgraph" alt=""/></div>
 <map name="atest__println_8c_acc37dfdb8c62eada86fecf37c8b5418c_cgraph" id="atest__println_8c_acc37dfdb8c62eada86fecf37c8b5418c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,91,32"/>
-<area shape="rect" href="cclib_8c.html#a1925cdb42031999f3e4272c01cbdff3c" title="Print string with linebreak." alt="" coords="139,5,195,32"/>
+<area shape="rect" href="cclib_8c.html#a8845747c4a0fc28e02cf986ed21ce46e" title="Print string with linebreak." alt="" coords="139,5,195,32"/>
 <area shape="poly" title=" " alt="" coords="91,16,123,16,123,21,91,21"/>
 </map>
 </div>
@@ -230,7 +230,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="test__println_8c.html">test_println.c</a></li>
-    <li class="footer">Generated on Tue Jul 16 2024 11:25:19 for CCLIB by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jul 16 2024 20:16:51 for CCLIB by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

@@ -117,12 +117,12 @@ $(function(){initNavTree('test__println_8c_source.html',''); initResizable(true)
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <span class="stringliteral">&quot;This is a very long string to test the println function to ensure it &quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <span class="stringliteral">&quot;can handle long inputs correctly.&quot;</span>};</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(test_strings) / <span class="keyword">sizeof</span>(test_strings[0]); ++i) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <span class="keyword">sizeof</span>(test_strings) / <span class="keyword">sizeof</span>(test_strings[0]); ++i) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    FILE *saved_stdout = stdout;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    stdout = freopen(<span class="stringliteral">&quot;tmp_output&quot;</span>, <span class="stringliteral">&quot;w+&quot;</span>, stdout);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    assert(stdout != NULL);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> result = <a class="code hl_function" href="cclib_8c.html#a1925cdb42031999f3e4272c01cbdff3c">println</a>(test_strings[i]);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> result = <a class="code hl_function" href="cclib_8c.html#a8845747c4a0fc28e02cf986ed21ce46e">println</a>(test_strings[i]);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    assert(result == 0);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    fflush(stdout);</div>
@@ -148,7 +148,7 @@ $(function(){initNavTree('test__println_8c_source.html',''); initResizable(true)
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  printf(<span class="stringliteral">&quot;test_println(): All tests passed.\n&quot;</span>);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 </div>
-<div class="ttc" id="acclib_8c_html_a1925cdb42031999f3e4272c01cbdff3c"><div class="ttname"><a href="cclib_8c.html#a1925cdb42031999f3e4272c01cbdff3c">println</a></div><div class="ttdeci">int println(char *str)</div><div class="ttdoc">Print string with linebreak.</div><div class="ttdef"><b>Definition</b> <a href="cclib_8c_source.html#l00061">cclib.c:61</a></div></div>
+<div class="ttc" id="acclib_8c_html_a8845747c4a0fc28e02cf986ed21ce46e"><div class="ttname"><a href="cclib_8c.html#a8845747c4a0fc28e02cf986ed21ce46e">println</a></div><div class="ttdeci">__THROW __attribute_warn_unused_result__ int println(const char *_str)</div><div class="ttdoc">Print string with linebreak.</div><div class="ttdef"><b>Definition</b> <a href="cclib_8c_source.html#l00061">cclib.c:61</a></div></div>
 <div class="ttc" id="atest__println_8c_html_acc37dfdb8c62eada86fecf37c8b5418c"><div class="ttname"><a href="test__println_8c.html#acc37dfdb8c62eada86fecf37c8b5418c">test_println</a></div><div class="ttdeci">void test_println(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">test_println.c:6</a></div></div>
 <div class="ttc" id="atest__util_8h_html"><div class="ttname"><a href="test__util_8h.html">test_util.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -157,7 +157,7 @@ $(function(){initNavTree('test__println_8c_source.html',''); initResizable(true)
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="test__println_8c.html">test_println.c</a></li>
-    <li class="footer">Generated on Tue Jul 16 2024 11:25:19 for CCLIB by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jul 16 2024 20:16:51 for CCLIB by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>
