@@ -15,9 +15,9 @@ typedef struct {
   int error;
 } String;
 
-int get_sum(int *arr, int size);
-int println(char *str);
+int get_sum(const int *arr, const size_t size);
+int println(const char *str);
 String str_join(const char *str1, const char *str2, const char delimiter);
-int free_all(int num, ...);
+int free_all(const size_t num, ...);
 
 #endif

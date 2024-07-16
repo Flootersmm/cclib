@@ -2,7 +2,12 @@
 
 ## Installation
 
+`git clone https://github.com/Flootersmm/cclib`
+
+`cd` into repo directory
+
 `make all`
+
 `make install`
 
 ## Testing
@@ -17,3 +22,7 @@
 
 Located in docs/html/index.
 Regenerate with `make docs`.
+
+## Cleaning
+
+`make clean`

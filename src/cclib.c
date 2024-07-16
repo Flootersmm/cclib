@@ -16,7 +16,7 @@
 /// @param arr The array of ints to sum.
 /// @param size The size of the array.
 /// @return The sum of all ints in the array. `INT_MIN` if error.
-int get_sum(int *arr, int size) {
+int get_sum(const int *arr, const size_t size) {
   Sum sum;
   sum = (Sum){.result = 0, .error = 0};
   errno = 0;
@@ -33,7 +33,7 @@ int get_sum(int *arr, int size) {
     return INT_MIN;
   }
 
-  for (int i = 0; i < size; i++) {
+  for (size_t i = 0; i < size; i++) {
     if (arr[i] > 0 && sum.result > INT_MAX - arr[i]) {
       errno = ERANGE;
       perror("    get_sum() failed");
@@ -58,7 +58,7 @@ int get_sum(int *arr, int size) {
 ///
 /// @param str A string.
 /// @return Result, 0 for success, -1 for failure.
-int println(char *str) {
+int println(const char *str) {
   errno = 0;
   if (str == NULL) {
     errno = EINVAL;
@@ -119,12 +119,12 @@ String str_join(const char *str1, const char *str2, const char delimiter) {
 /// @param ... Pointers to be freed.
 ///
 /// @return 0 for success, -1 for failure.
-int free_all(int num, ...) {
+int free_all(const size_t num, ...) {
   va_list args;
   va_start(args, num);
   int error_occurred = 0;
 
-  for (int i = 0; i < num; i++) {
+  for (size_t i = 0; i < num; i++) {
     void **ptr = va_arg(args, void **);
     if (ptr != NULL && *ptr != NULL) {
       free(*ptr);

@@ -14,7 +14,7 @@ void test_println(void) {
       "This is a very long string to test the println function to ensure it "
       "can handle long inputs correctly."};
 
-  for (int i = 0; i < sizeof(test_strings) / sizeof(test_strings[0]); ++i) {
+  for (size_t i = 0; i < sizeof(test_strings) / sizeof(test_strings[0]); ++i) {
     FILE *saved_stdout = stdout;
     stdout = freopen("tmp_output", "w+", stdout);
     assert(stdout != NULL);

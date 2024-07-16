@@ -17,7 +17,7 @@ EXECUTABLE = $(OBJ_DIR)/main
 STATIC_LIB = $(LIB_DIR)/libcclib.a
 
 # Compile flags
-CFLAGS = -I$(INCLUDE_DIR) -g
+CFLAGS = -I$(INCLUDE_DIR) -g -Wall -Wextra -Werror
 
 # Targets
 .PHONY: all clean test docs clean_docs force install
